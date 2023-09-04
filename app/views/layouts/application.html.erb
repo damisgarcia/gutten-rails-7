@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="cupcake">
   <head>
     <title>Gutten</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,7 +12,16 @@
   </head>
 
   <body>
-    <main class="container mx-auto px-5 flex">
+    <div class="container mx-auto flex">
+      <%= render(App::Navbar::NavbarComponent.new('Gutten')) do |c| %>
+        <% c.with_items([
+          { title: 'Item 1', to: nil, index: 0 },
+          { title: 'Item 2', to: nil, index: 1 },
+          { title: 'Item 3', to: nil, index: 2 }
+        ]) %>
+      <% end %>
+    </div>
+    <main class="container mx-auto my-8 px-5">
       <%= yield %>
     </main>
   </body>

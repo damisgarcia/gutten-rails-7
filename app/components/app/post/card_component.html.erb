@@ -1,0 +1,11 @@
+<%= link_to @post, class: 'card w-96 bg-base-100 shadow-md transition transition-shadow ease-in-out hover:shadow-xl' do %>
+  <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+  <div class="card-body">
+    <h2 class="card-title">
+      <%= @post.title %>
+    </h2>
+    <p>
+      <%= @post.body.to_plain_text[0..90] %> ...
+    </p>
+  </div>
+<% end %>
