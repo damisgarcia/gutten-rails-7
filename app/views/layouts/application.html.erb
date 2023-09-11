@@ -19,6 +19,16 @@
           { title: 'Item 2', to: nil, index: 1 },
           { title: 'Item 3', to: nil, index: 2 }
         ]) %>
+        <% c.with_navbar_end do %>
+          <div class="flex gap-2">
+            <div class="btn btn-ghost">
+              <a>Login</a>
+            </div>
+            <div class="btn btn-ghost">
+              <a>Create Account</a>
+            </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <main class="container mx-auto my-8 px-5">
