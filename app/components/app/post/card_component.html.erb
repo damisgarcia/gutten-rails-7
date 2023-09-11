@@ -1,5 +1,11 @@
 <%= link_to @post, class: 'card w-96 bg-base-100 shadow-md transition transition-shadow ease-in-out hover:shadow-xl' do %>
-  <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+  <% if @post.media.persisted? %>
+    <figure>
+      <%= image_tag @post.media.variant(:medium), class: 'object-cover w-full h-48' %>
+    </figure>
+  <% else %>
+    <div class="bg-neutral-200 rounded-t-lg h-48"></div>
+  <% end %>
   <div class="card-body">
     <h2 class="card-title">
       <%= @post.title %>
