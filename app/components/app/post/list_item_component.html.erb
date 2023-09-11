@@ -1,0 +1,17 @@
+<%= link_to @post do %>
+  <div class="my-5 flex items-center">
+      <article class="prose prose-sm max-w-full grow">
+        <h2><%= @post.title %></h2>
+        <p>
+          <%= @post.body.to_plain_text[0..90] %> ...
+        </p>
+      </article>
+      <div class="media min-w-48 p-4">
+        <% if @post.media.persisted? %>
+        <figure class="w-24 h-24">
+          <%= image_tag @post.media.variant(:thumb), class: "object-cover rounded-lg" %>
+        </figure>
+        <% end %>
+      </div>
+  </div>
+<% end %>
