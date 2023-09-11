@@ -8,9 +8,20 @@
   </div>
 
   <div id="posts" class="min-w-full">
-    <div class="flex gap-6">
+    <div class="text-2xl font-bold mb-4">
+      Posts as Cards
+    </div>
+    <div class="flex gap-6 mb-5">
       <% @posts.each do |post|%>
         <%= render(App::Post::CardComponent.new(post: post)) %>
+      <% end %>
+    </div>
+    <div class="text-2xl font-bold">
+      Posts as List
+    </div>
+    <div class="max-w-screen-sm">
+      <% @posts.each do |post|%>
+        <%= render(App::Post::ListItemComponent.new(post: post)) %>
       <% end %>
     </div>
   </div>
