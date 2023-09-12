@@ -11,18 +11,18 @@
     <div class="text-2xl font-bold mb-4">
       Posts as Cards
     </div>
-    <div class="flex flex-wrap justify-center gap-6">
+    <div class="grid grid-cols-4 gap-6 my-5">
       <% @posts.each do |post|%>
         <%= render(App::Post::CardComponent.new(post: post)) %>
       <% end %>
     </div>
-    <div class="text-2xl font-bold">
-      Posts as List
-    </div>
-    <div class="max-w-screen-sm">
-      <% @posts.each do |post|%>
-        <%= render(App::Post::ListItemComponent.new(post: post)) %>
-      <% end %>
+
+    <div class="text-center my-4">
+      <div role="navigation" aria-label="Pagination" class="px-3 py-2 mx-2 text-gray-700 no-underline bg-white rounded-lg">
+        <div class="py-4">
+          <%= will_paginate @payments %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
