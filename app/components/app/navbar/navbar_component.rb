@@ -3,7 +3,7 @@
 module App
   module Navbar
     class NavbarComponent < ViewComponent::Base
-      renders_many :items, 'App::Navbar::NavbarItemComponent'
+      renders_many :items, "App::Navbar::NavbarItemComponent"
       renders_one :navbar_end
 
       def initialize(title)

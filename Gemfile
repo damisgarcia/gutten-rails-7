@@ -55,13 +55,13 @@ gem "image_processing", "~> 1.2"
 gem "view_component"
 
 # Use Will Paginate for pagination in consult ActiveRecord [https://github.com/mislav/will_paginate]
-gem 'will_paginate', '~> 4.0'
+gem "will_paginate", "~> 4.0"
 
 group :development, :test do
   # https://www.rubydoc.info/gems/factory_bot/file/GETTING_STARTED.md
-  gem 'factory_bot_rails'
+  gem "factory_bot_rails"
   # https://github.com/faker-ruby/faker
-  gem 'faker', require: false
+  gem "faker", require: false
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
 end
