@@ -5,6 +5,7 @@ O Devise é uma biblioteca popular de autenticação para Ruby on Rail
 <pre>
   <code>
     gem 'devise', '~> 4.9', '>= 4.9.2'
+    gem 'devise-tailwindcssed'
   </code>
 </pre>
 
@@ -37,7 +38,7 @@ Agora iremos criar as views relacionadas ao sistema de autênticação do Devise
 
 <pre>
   <code>
-    rails generate devise:views
+    rails generate devise:views:tailwindcssed
   </code>
 </pre>
 
