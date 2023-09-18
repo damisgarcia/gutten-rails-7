@@ -81,6 +81,9 @@ group :development do
   # gem "spring"
 
   gem "ruby-lsp-rails"
+
+  # https://github.com/threedaymonk/htmlbeautifier
+  gem "htmlbeautifier"
 end
 
 group :test do

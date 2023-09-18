@@ -2,11 +2,9 @@
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
-
   <div class="flex justify-end items-flex-end">
     <%= link_to 'New post', new_post_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
-
   <div id="posts" class="min-w-full">
     <div class="text-2xl font-bold mb-4">
       Posts as Cards
@@ -16,11 +14,10 @@
         <%= render(App::Post::CardComponent.new(post: post)) %>
       <% end %>
     </div>
-
     <div class="text-center my-4">
       <div role="navigation" aria-label="Pagination" class="px-3 py-2 mx-2 text-gray-700 no-underline bg-white rounded-lg">
         <div class="py-4">
-          <%= will_paginate @payments %>
+          <%= will_paginate @posts %>
         </div>
       </div>
     </div>
