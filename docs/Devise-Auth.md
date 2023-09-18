@@ -54,7 +54,7 @@ Será criado a estrutura de manipulação dos usuários do sistema na pasta `app
 <pre>
   <code>
     class Admin::AdminController < ApplicationController
-      before_action :authenticate_member!
+      before_action :authenticate_user!
     end
   </code>
 </pre>
