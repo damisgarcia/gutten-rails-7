@@ -42,3 +42,5 @@ node_modules
 
 yarn.lock
 package-lock.json
+
+/config/credentials/development.key
