@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html data-theme="cupcake">
+  <head>
+    <title>Gutten</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+    <%= render(App::Navbar::NavbarComponent.new('Gutten', true)) do |c| %>
+      <% c.with_navbar_end do %>
+        <% if user_signed_in? %>
+          <div class="flex items-center gap-4">
+            <div class="font-bold">
+              <%= current_user.email %>
+            </div>
+            <%= link_to 'Logout', destroy_user_session_path, class: 'btn btn-ghost', data: { "turbo-method": :delete } %>
+          </div>
+        <% else %>
+          <div class="flex gap-2">
+            <%= link_to 'Login', user_session_path, class: 'btn btn-ghost' %>
+            <%= link_to 'Signup', new_user_registration_path, class: 'btn btn-ghost' %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+    <div class="pt-16">
+      <div class="grid grid-cols-12 px-6 pt-6">
+        <div class="col-span-2">
+          <%= render "layouts/admin/menu" %>
+        </div>
+        <div class="col-span-10">
+          <main class="container mx-auto my-8">
+            <%= yield %>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

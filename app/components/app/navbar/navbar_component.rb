@@ -6,8 +6,9 @@ module App
       renders_many :items, "App::Navbar::NavbarItemComponent"
       renders_one :navbar_end
 
-      def initialize(title)
+      def initialize(title, fixed = false)
         @title = title
+        @fixed = fixed
       end
     end
   end
