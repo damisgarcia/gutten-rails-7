@@ -3,7 +3,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.6"
+ruby "3.3.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.7", ">= 7.0.7.2"
@@ -88,9 +88,6 @@ group :development do
 
   # https://github.com/threedaymonk/htmlbeautifier
   gem "htmlbeautifier"
-
-  # Use for generate devise views as tailwindcss [https://github.com/posiczko/devise-tailwindcssed]
-  gem "devise-tailwindcssed"
 end
 
 group :test do
