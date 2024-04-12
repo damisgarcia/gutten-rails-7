@@ -9,4 +9,8 @@ class Post < ApplicationRecord
   end
 
   validates :title, presence: true
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w(created_at id title updated_at)
+  end
 end

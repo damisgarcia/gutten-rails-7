@@ -61,6 +61,9 @@ gem "view_component"
 # Use Will Paginate for pagination in consult ActiveRecord [https://github.com/mislav/will_paginate]
 gem "will_paginate", "~> 4.0"
 
+# User for simples search in ActiveRecord
+gem "ransack"
+
 group :development, :test do
   # https://www.rubydoc.info/gems/factory_bot/file/GETTING_STARTED.md
   gem "factory_bot_rails"

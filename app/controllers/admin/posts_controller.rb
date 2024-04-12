@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 class Admin::PostsController < Admin::BaseController
   before_action :set_post, only: %i[ show edit update destroy ]
 
   # GET /admin/posts or /admin/posts.json
   def index
-    @posts = Post.all
+    @q = Post.ransack(params[:q])
+    @posts = @q.result.paginate(page: params[:page])
   end
 
   # GET /admin/posts/1 or /admin/posts/1.json
@@ -26,10 +29,8 @@ class Admin::PostsController < Admin::BaseController
     respond_to do |format|
       if @post.save
         format.html { redirect_to admin_post_url(@post), notice: "Post was successfully created." }
-        format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -39,10 +40,8 @@ class Admin::PostsController < Admin::BaseController
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to admin_post_url(@post), notice: "Post was successfully updated." }
-        format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -58,6 +57,7 @@ class Admin::PostsController < Admin::BaseController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
