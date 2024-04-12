@@ -1,0 +1,6 @@
+.admin-header {
+  @apply sticky top-0 left-0 right-0 bg-white border-gray-200;
+  .navbar {
+    @apply bg-transparent;
+  }
+}

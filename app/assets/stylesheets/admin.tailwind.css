@@ -1,5 +1,9 @@
 @import "actiontext.css";
 
+@import "admin/base.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+

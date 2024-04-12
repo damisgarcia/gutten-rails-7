@@ -1,0 +1,6 @@
+.admin-menu {
+  @apply space-y-2 font-medium;
+  a {
+    @apply flex items-center p-2 rounded-lg text-white hover:bg-gray-700;
+  }
+}

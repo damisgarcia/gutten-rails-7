@@ -1,7 +1,7 @@
 <%= link_to @post, class: 'card w-full bg-base-100 shadow-md transition transition-shadow ease-in-out hover:shadow-xl' do %>
-  <% if @post.media.persisted? %>
+  <% if @post.image.persisted? %>
     <figure>
-      <%= image_tag @post.media.variant(:medium), class: 'object-cover w-full h-48' %>
+      <%= image_tag @post.image.variant(:medium), class: 'object-cover w-full h-48' %>
     </figure>
   <% else %>
     <div class="bg-neutral-200 rounded-t-lg h-48"></div>

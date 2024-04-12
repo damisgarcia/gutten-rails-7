@@ -4,9 +4,9 @@
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Posts</h1>
-    <%= link_to "New post", new_admin_post_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  <div class="flex justify-between items-center mb-8">
+    <h1 class="font-bold text-3xl">Posts</h1>
+    <%= link_to "New post", new_admin_post_path, class: "admin-button is-primary" %>
   </div>
   <div id="posts" class="min-w-full">
     <div class="overflow-x-auto">
@@ -16,7 +16,7 @@
             <td><%= model.human_attribute_name :image %></td>
             <td><%= model.human_attribute_name :title %></td>
             <td><%= model.human_attribute_name :body %></td>
-            <td>Actions</td>
+            <td class="text-right">Actions</td>
           </tr>
         </thead>
         <tbody>
@@ -34,9 +34,11 @@
               <td><%= link_to post.title, admin_post_path(post) %></td>
               <td><%= post.body.to_plain_text[0..45] %></td>
               <td>
-                <%= link_to "Show", admin_post_path(post), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-                <%= link_to "Edit", edit_admin_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-                <%= link_to "Destroy", admin_post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "rounded-lg py-3 ml-2 px-5 bg-red-500 text-white inline-block font-medium" %>
+                <div class="flex justify-end gap-3">
+                  <%= link_to "Show", admin_post_path(post), class: "admin-button" %>
+                  <%= link_to "Edit", edit_admin_post_path(post), class: "admin-button" %>
+                  <%= link_to "Destroy", admin_post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "admin-button is-danger" %>
+                </div>
               </td>
             </tr>
           <% end %>

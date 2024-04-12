@@ -1,6 +1,11 @@
 <% model = Post %>
-<%= search_form_for [:admin, @q] do |f| %>
-  <%= f.label :title_cont, model.human_attribute_name(:title) %>
-  <%= f.text_field :title_cont %>
-  <%= f.submit %>
-<% end %>
+<div class="mb-4">
+  <%= search_form_for [:admin, @q] do |f| %>
+    <div class="inline-flex items-center gap-6">
+      <div class="form-control">
+        <%= f.text_field :title_cont, class: "input input-bordered w-full rounded-md max-w-xs", placeholder: model.human_attribute_name(:title) %>
+      </div>
+      <%= f.submit "Search", class: "btn rounded-md" %>
+    </div>
+  <% end %>
+</div>
