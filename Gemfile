@@ -58,6 +58,9 @@ gem "image_processing", "~> 1.2"
 # https://viewcomponent.org/
 gem "view_component"
 
+# Use simple form for Rails form manage [https://github.com/heartcombo/simple_form]
+gem "simple_form"
+
 # Use Will Paginate for pagination in consult ActiveRecord [https://github.com/mislav/will_paginate]
 gem "will_paginate", "~> 4.0"
 

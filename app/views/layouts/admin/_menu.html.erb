@@ -1,10 +1,10 @@
 <ul class="menu">
   <li>
-    <details>
-      <summary>Conteúdo</summary>
+    <details <%= current_controller?(["posts"]) ? "open" : nil %>>
+      <summary>Manage Content</summary>
       <ul>
         <li>
-          <%= link_to 'Posts', admin_posts_path %>
+          <%= active_link_to 'Posts', admin_posts_path %>
         </li>
       </ul>
     </details>

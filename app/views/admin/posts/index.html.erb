@@ -1,5 +1,4 @@
 <% model = Post %>
-<%= render "filter" %>
 <div class="w-full">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
@@ -8,6 +7,7 @@
     <h1 class="font-bold text-3xl">Posts</h1>
     <%= link_to "New post", new_admin_post_path, class: "admin-button is-primary" %>
   </div>
+  <%= render "filter" %>
   <div id="posts" class="min-w-full">
     <div class="overflow-x-auto">
       <table class="table">
@@ -37,7 +37,7 @@
                 <div class="flex justify-end gap-3">
                   <%= link_to "Show", admin_post_path(post), class: "admin-button" %>
                   <%= link_to "Edit", edit_admin_post_path(post), class: "admin-button" %>
-                  <%= link_to "Destroy", admin_post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "admin-button is-danger" %>
+                  <%= link_to "Destroy", admin_post_path(post), method: :delete, data: { "turbo-confirm": "Are you sure?", "turbo-method": :delete }, class: "admin-button is-danger" %>
                 </div>
               </td>
             </tr>
