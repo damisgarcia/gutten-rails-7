@@ -11,7 +11,10 @@
     "trix": "^2.0.5"
   },
   "devDependencies": {
-    "postcss-import": "^15.1.0"
+    "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
+    "autoprefixer": "^10.4.19",
+    "postcss-import": "^15.1.0",
+    "postcss-nesting": "^12.1.1"
   },
   "scripts": {
     "admin:css": "tailwindcss -i ./app/assets/stylesheets/admin.tailwind.css -c ./config/tailwind.config.js  -o ./app/assets/builds/admin.css -m",

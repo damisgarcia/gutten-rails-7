@@ -1,12 +1,15 @@
-<ul class="admin-menu">
+<ul class="menu">
   <li>
-    <ul>
-      <li>
-        <%= link_to 'Posts', admin_posts_path %>
-      </li>
-      <li>
-        <%= link_to 'Users', admin_posts_path %>
-      </li>
-    </ul>
+    <details>
+      <summary>Conteúdo</summary>
+      <ul>
+        <li>
+          <%= link_to 'Posts', admin_posts_path %>
+        </li>
+      </ul>
+    </details>
+  </li>
+  <li>
+    <%= link_to 'Users', admin_posts_path %>
   </li>
 </ul>
