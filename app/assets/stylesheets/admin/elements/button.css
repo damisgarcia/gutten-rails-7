@@ -5,14 +5,26 @@
   &:focus {
     @apply bg-gray-300 cursor-pointer;
   }
+
   &.is-primary {
-    @apply bg-blue-600 text-white hover:bg-blue-700 focus:bg-blue-700;
+    @apply admin-button-primary;
   }
 
   &.is-danger {
-    @apply bg-red-600 text-white hover:bg-red-700 focus:bg-red-700;
+    @apply admin-button-danger;
   }
+
   &.is-default {
-    @apply !bg-gray-200;
+    @apply admin-button-default;
   }
+}
+
+.admin-button-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 focus:bg-blue-700;
+}
+.admin-button-danger {
+  @apply bg-red-600 text-white hover:bg-red-700 focus:bg-red-700;
+}
+.admin-button-default {
+  @apply !bg-gray-200;
 }

@@ -1,0 +1,40 @@
+.admin-layout {
+  .form-inputs {
+    @apply flex flex-col gap-5 mb-5;
+    .field {
+      &:first-child {
+        @apply mt-5;
+      }
+
+      label {
+        @apply block;
+      }
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"],
+      input[type="number"],
+      input[type="password"],
+      select {
+        @apply admin-field-input;
+      }
+
+      &.enum_radio_buttons {
+        @apply flex  gap-2;
+        label {
+          @apply flex items-center gap-2;
+        }
+      }
+    }
+  }
+  .form-actions {
+    @apply flex gap-4 mb-5;
+
+    input[type="submit"] {
+      @apply admin-button admin-button-primary;
+    }
+  }
+}
+
+.admin-field-input {
+  @apply block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full;
+}

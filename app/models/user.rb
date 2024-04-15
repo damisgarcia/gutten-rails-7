@@ -19,4 +19,14 @@ class User < ApplicationRecord
     publisher: 2,
     company: 3
   }
+
+  enum gender: {
+    female: 0,
+    male: 1,
+    other: 2
+  }
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

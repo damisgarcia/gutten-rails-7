@@ -59,13 +59,15 @@ gem "image_processing", "~> 1.2"
 gem "view_component"
 
 # Use simple form for Rails form manage [https://github.com/heartcombo/simple_form]
-gem "simple_form"
+gem "simple_form", "~> 5.1.0"
 
 # Use Will Paginate for pagination in consult ActiveRecord [https://github.com/mislav/will_paginate]
 gem "will_paginate", "~> 4.0"
 
 # User for simples search in ActiveRecord
 gem "ransack"
+
+gem "enum_help", "~> 0.0.17" # model enum to view
 
 group :development, :test do
   # https://www.rubydoc.info/gems/factory_bot/file/GETTING_STARTED.md

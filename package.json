@@ -13,11 +13,13 @@
   "devDependencies": {
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
     "postcss-import": "^15.1.0",
     "postcss-nesting": "^12.1.1"
   },
   "scripts": {
-    "admin:css": "tailwindcss -i ./app/assets/stylesheets/admin.tailwind.css -c ./config/tailwind.config.js  -o ./app/assets/builds/admin.css -m",
-    "application:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -c ./config/tailwind.config.js -o ./app/assets/builds/tailwind.css -m"
+    "admin:css": "postcss ./app/assets/stylesheets/admin.tailwind.css -o ./app/assets/builds/admin.css -m",
+    "application:css": "postcss ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/tailwind.css -m"
   }
 }
