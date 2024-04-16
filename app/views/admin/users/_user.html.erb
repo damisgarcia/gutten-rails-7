@@ -1,36 +1,42 @@
+<% model = User %>
 <div id="<%= dom_id user %>">
   <p class="my-5">
-    <strong class="block font-medium mb-1">Email:</strong>
+    <strong class="block font-medium mb-1"><%= model.human_attribute_name :avatar %>:</strong>
+    <%= image_tag user.avatar.variant(:thumb) if user.avatar.present? %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1"><%= model.human_attribute_name :email %>:</strong>
     <%= user.email %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">First name:</strong>
+    <strong class="block font-medium mb-1"><%= model.human_attribute_name :first_name %>:</strong>
     <%= user.first_name %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Last name:</strong>
+    <strong class="block font-medium mb-1"><%= model.human_attribute_name :last_name %>:</strong>
     <%= user.last_name %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Phone:</strong>
+    <strong class="block font-medium mb-1"><%= model.human_attribute_name :phone %>:</strong>
     <%= user.phone %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Gender:</strong>
+    <strong class="block font-medium mb-1"><%= model.human_attribute_name :gender %>:</strong>
     <%= user.gender %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Status:</strong>
+    <strong class="block font-medium mb-1"><%= model.human_attribute_name :status %>:</strong>
     <%= user.status %>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Role:</strong>
+    <strong class="block font-medium mb-1"><%= model.human_attribute_name :role %>:</strong>
     <%= user.role %>
   </p>
 

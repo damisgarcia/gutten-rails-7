@@ -1,11 +1,11 @@
 <aside id="default-sidebar" data-theme="dark" class="w-72 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
   <div class="h-full px-3 py-4 overflow-y-auto">
-    <a href="https://flowbite.com/" class="flex items-center ps-2.5 mb-5">
-      <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3 sm:h-7" alt="Flowbite Logo" />
+    <%= link_to admin_posts_path, class: "flex items-center ps-2.5 mb-5" do %>
+      <%= image_tag "https://flowbite.com/docs/images/logo.svg", class: "h-6 me-3 sm:h-7", alt: "Flowbite Logo" %>
       <span class="self-center text-xl font-semibold whitespace-nowrap">
         Gutten
       </span>
-    </a>
+    <% end %>
     <%= render "layouts/admin/menu" %>
   </div>
 </aside>

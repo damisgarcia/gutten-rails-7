@@ -13,7 +13,7 @@
       <table class="table">
         <thead>
           <tr>
-            <td><%= model.human_attribute_name :image %></td>
+            <td><%= model.human_attribute_name :id %></td>
             <td><%= model.human_attribute_name :title %></td>
             <td><%= model.human_attribute_name :body %></td>
             <td class="text-right">Actions</td>
@@ -22,15 +22,7 @@
         <tbody>
           <% @posts.each do |post| %>
             <tr>
-              <td>
-                <% if post.image.persisted? %>
-                  <div class="avatar">
-                    <div class="mask mask-squircle w-12 h-12">
-                      <%= image_tag post.image.variant(:thumb).processed %>
-                    </div>
-                  </div>
-                <% end %>
-              </td>
+              <td><%= post.id %></td>
               <td><%= link_to post.title, admin_post_path(post) %></td>
               <td><%= post.body.to_plain_text[0..45] %></td>
               <td>
