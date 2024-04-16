@@ -1,7 +1,7 @@
-<ul class="menu">
+<ul class="menu gap-2">
   <li>
     <details <%= current_controller?(["posts"]) ? "open" : nil %>>
-      <summary>Manage Content</summary>
+      <summary class="mb-2">Manage Content</summary>
       <ul>
         <li>
           <%= active_link_to 'Posts', admin_posts_path %>

@@ -1,11 +1,23 @@
-<aside id="default-sidebar" data-theme="dark" class="w-72 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
-  <div class="h-full px-3 py-4 overflow-y-auto">
-    <%= link_to admin_posts_path, class: "flex items-center ps-2.5 mb-5" do %>
+<aside id="default-sidebar" data-theme="dark" class="fixed z-50 w-72 h-screen transition-transform -translate-x-full sm:static sm:translate-x-0" aria-label="Sidebar">
+  <div class="flex flex-col gap-5 h-full px-3 py-4 overflow-y-auto">
+    <%= link_to admin_posts_path, class: "flex items-center ps-2.5" do %>
       <%= image_tag "https://flowbite.com/docs/images/logo.svg", class: "h-6 me-3 sm:h-7", alt: "Flowbite Logo" %>
       <span class="self-center text-xl font-semibold whitespace-nowrap">
         Gutten
       </span>
     <% end %>
-    <%= render "layouts/admin/menu" %>
+
+    <div class="flex flex-col overflow-y-auto overflow-x-hidden flex-1">
+      <%= render "layouts/admin/menu" %>
+    </div>
+
+    <button
+        data-controller="admin--toggle-aside-button"
+        data-action="admin--toggle-aside-button#toggle"
+        data-admin--toggle-aside-button-aside-param="default-sidebar"
+        class="admin-button admin-button-primary max-w-fit sm:hidden"
+    >
+      Close Menu
+    </button
   </div>
 </aside>
