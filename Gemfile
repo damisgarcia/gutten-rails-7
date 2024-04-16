@@ -76,6 +76,9 @@ group :development, :test do
   gem "faker", require: false
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
+
+  # See https://www.rubydoc.info/gems/annotate_models/0.0.4
+  gem 'annotate', '~> 3.2'
 end
 
 group :development do

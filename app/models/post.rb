@@ -1,5 +1,15 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: posts
+#
+#  id         :integer          not null, primary key
+#  status     :integer
+#  title      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 class Post < ApplicationRecord
   enum status: {
     draft: 0,
