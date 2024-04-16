@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  include ::RansackConcern
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -26,7 +28,18 @@ class User < ApplicationRecord
     other: 2
   }
 
+
   def name
     "#{first_name} #{last_name}"
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w(first_name
+       last_name
+       email
+       status
+       role
+       gender
+       created_at)
   end
 end

@@ -65,7 +65,7 @@ gem "simple_form", "~> 5.1.0"
 gem "will_paginate", "~> 4.0"
 
 # User for simples search in ActiveRecord
-gem "ransack"
+gem "ransack", "~> 3.2.1" # search forms
 
 gem "enum_help", "~> 0.0.17" # model enum to view
 

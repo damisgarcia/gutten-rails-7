@@ -5,7 +5,8 @@ class Admin::UsersController < Admin::BaseController
 
   # GET /admin/users or /admin/users.json
   def index
-    @users = User.paginate(page: params[:page])
+    @q = User.ransack(params[:q])
+    @users = @q.result.paginate(page: params[:page])
   end
 
   # GET /admin/users/1 or /admin/users/1.json
