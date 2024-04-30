@@ -16,6 +16,8 @@
             <td><%= model.human_attribute_name :id %></td>
             <td><%= model.human_attribute_name :email %></td>
             <td><%= model.human_attribute_name :name %></td>
+            <td><%= model.human_attribute_name :role %></td>
+            <td><%= model.human_attribute_name :posts %></td>
             <td class="text-right">Actions</td>
           </tr>
         </thead>
@@ -27,6 +29,8 @@
               </td>
               <td><%= link_to user.email, admin_user_path(user) %></td>
               <td><%= user.name %></td>
+              <td><%= user.role %></td>
+              <td><%= link_to model.human_attribute_name(:posts), admin_posts_url(q: { author_email_eq: user.email }) %></td>
               <td>
                 <div class="flex justify-end gap-3">
                   <%= link_to "Show", admin_user_path(user), class: "admin-button" %>

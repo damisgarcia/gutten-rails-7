@@ -14,7 +14,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
-#  role                   :integer          default("registerable")
+#  role                   :integer          default("registered")
 #  status                 :integer          default("active")
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -41,7 +41,7 @@ class User < ApplicationRecord
   }
 
   enum role: {
-    registerable: 0,
+    registered: 0,
     admin: 1,
     publisher: 2,
     company: 3
@@ -53,6 +53,11 @@ class User < ApplicationRecord
     other: 2
   }
 
+  has_many :posts, foreign_key: :author_id, dependent: :destroy
+
+  def destroy
+    update(status: :inactive)
+  end
 
   def name
     "#{first_name} #{last_name}"

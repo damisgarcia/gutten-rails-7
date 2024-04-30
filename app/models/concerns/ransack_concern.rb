@@ -11,5 +11,7 @@ module RansackConcern
         end
       end
     end
+  rescue ActiveRecord::StatementInvalid
+    false
   end
 end

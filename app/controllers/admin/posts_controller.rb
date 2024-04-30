@@ -6,7 +6,7 @@ class Admin::PostsController < Admin::BaseController
   # GET /admin/posts or /admin/posts.json
   def index
     @q = Post.ransack(params[:q])
-    @posts = @q.result.paginate(page: params[:page])
+    @posts = @q.result.includes(:author).paginate(page: params[:page])
   end
 
   # GET /admin/posts/1 or /admin/posts/1.json

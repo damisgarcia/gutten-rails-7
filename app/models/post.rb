@@ -5,10 +5,19 @@
 # Table name: posts
 #
 #  id         :integer          not null, primary key
-#  status     :integer
+#  status     :integer          default("draft")
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  author_id  :integer          not null
+#
+# Indexes
+#
+#  index_posts_on_author_id  (author_id)
+#
+# Foreign Keys
+#
+#  author_id  (author_id => users.id)
 #
 class Post < ApplicationRecord
   enum status: {
@@ -25,9 +34,15 @@ class Post < ApplicationRecord
     attachable.variant :medium, resize_to_limit: [600, 600]
   end
 
+  belongs_to :author, class_name: "User"
+
   validates :title, presence: true
 
+  def destroy
+    update(status: :archived)
+  end
+
   def self.ransackable_attributes(auth_object = nil)
-    %w(created_at id title updated_at)
+    %w(id author title status created_at updated_at)
   end
 end

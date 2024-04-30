@@ -14,6 +14,7 @@
       input[type="email"],
       input[type="number"],
       input[type="password"],
+      input[type="datetime-local"],
       select {
         @apply admin-field-input;
       }

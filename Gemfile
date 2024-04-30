@@ -78,7 +78,7 @@ group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
 
   # See https://www.rubydoc.info/gems/annotate_models/0.0.4
-  gem 'annotate', '~> 3.2'
+  gem "annotate", "~> 3.2"
 end
 
 group :development do

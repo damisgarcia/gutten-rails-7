@@ -16,12 +16,23 @@ admin.password = "123456"
 admin.password_confirmation = "123456"
 admin.admin!
 
-puts "Create registrable users"
+puts "Create registered users"
 FactoryBot.build_list(:user, 10).each do |user|
   user.password = "123456"
   user.password_confirmation = "123456"
   user.save!
 end
 
-puts "Create posts"
-FactoryBot.create_list(:post, 25)
+puts "Create publisher users"
+publishers = FactoryBot.build_list(:user, 5).each do |user|
+  user.password = "123456"
+  user.password_confirmation = "123456"
+  user.publisher!
+end
+
+puts "Creating posts..."
+publishers.each do |publisher|
+  FactoryBot.build_list(:post, 15, author: publisher).each do |post|
+    post.published!
+  end
+end
